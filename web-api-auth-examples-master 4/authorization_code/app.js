@@ -101,30 +101,59 @@ app.get('/callback', function(req, res) {
         };
 
         //get users current song
-        var currentSong = {
+        var currSong = {
           url: 'https://api.spotify.com/v1/me/player/currently-playing',
           headers: { 'Authorization': 'Bearer ' + access_token },
           json: true
         }
 
-        //get current song analysis
-        var currAnalytics = {
-          url:  'https://api.spotify.com/v1/audio-analysis/{id}',
-          headers: { 'Authorization': 'Bearer ' + access_token },
-          json: true
-          
-        }
-
+        
 
         // use the access token to access the Spotify Web API
         console.log('');
-        console.log('here');
+        var id; //for storing spotify unique song id
+        var bpm; //for storing current songs bpm
 
-        request.get(currentSong, function(error, response, body) {
-          console.log('test');
-          console.log(body);
+        request.get(currSong, function(error, response, data) {
+          console.log('------ Song ID ------');
+          console.log(data.item['name']);
+          console.log(data.item['id']);
+          id = data.item['id'];
+          var track;
+
           console.log('');
+
+          //track analysis credentials
+          var currAnalytics = {
+            url:  'https://api.spotify.com/v1/audio-analysis/' +id,
+            headers: { 'Authorization': 'Bearer ' + access_token },
+            json: true
+          }
+
+          //track request credentials
+          var currTrack = {
+            url:  'https://api.spotify.com/v1/tracks/' +id,
+            headers: { 'Authorization': 'Bearer ' + access_token },
+            json: true
+          }
+
+          //Requests Track
+          request.get(currTrack, function(error, response, data) {
+            console.log('------ Track ------');
+            console.log(data.album.images);
+            console.log('');
+          });
+
+
+          //Track Analytics
+          request.get(currAnalytics, function(error, response, data) {
+            console.log('------ Analytics ------');
+            console.log(data.track.tempo);
+            console.log('');
+          });
         });
+
+        
 
         
 

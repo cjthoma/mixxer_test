@@ -1,19 +1,9 @@
 <!doctype html>
 <html>
   <head>
-    <title>Example of the Authorization Code flow with Spotify</title>
+    <title>Mixxer App</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <style type="text/css">
-      #login, #loggedin {
-        display: none;
-      }
-      .text-overflow {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 500px;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
   <body>
@@ -22,15 +12,151 @@
         <h1>This is an example of the Authorization Code flow</h1>
         <a href="/login" class="btn btn-primary">Log in with Spotify</a>
       </div>
+
       <div id="loggedin">
         <div id="user-profile">
         </div>
+        <h1>Currently Playing: <span id="currently-playing"></span></h1>
+        <h1>BPM: <span id="song-bpm"></span></h1>
+        <h1>Album Art: <img id="album-art" src="" alt=""></h1>
         <div id="oauth">
         </div>
+
+        <body>
+            <div id="Home">
+              <!-- Nav Bar Rectangle -->
+              <svg class="Rectangle_1">
+                <rect fill="rgba(231,236,239,1)" id="Rectangle_1" rx="10" ry="10" x="0" y="0" width="370" height="1080">
+                </rect>
+              </svg>
+
+              <!-- Main Rectangle -->
+              <svg class="Rectangle_2">
+                <rect fill="rgba(249,250,251,1)" id="Rectangle_2" rx="10" ry="10" x="0" y="0" width="1550" height="1080">
+                </rect>
+              </svg>
+
+              <!-- User Rectangle -->
+              <svg class="Rectangle_3">
+                <rect fill="rgba(78,78,78,1)" id="Rectangle_3" rx="0" ry="0" x="0" y="0" width="250" height="75">
+                </rect>
+              </svg>
+
+              <!-- User Icon Rectangle -->
+              <svg class="Rectangle_4">
+                <rect fill="rgba(255,255,255,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_4" rx="0" ry="0" x="0" y="0" width="60" height="58">
+                </rect>
+              </svg>
+
+              <!-- Menu -->
+              <div id="Welcome">
+                <span>Welcome</span>
+              </div>
+              <div id="MIXXER">
+                  <span>MIXXER</span>
+                </div>
+              <div id="user_name">
+                <span>user_name</span>
+              </div>
+              <div id="MENU">
+                <span>MENU</span>
+              </div>
+              <div id="player">
+                <span>player</span>
+              </div>
+              <div onclick="application.goToTargetView(event)" id="playlists">
+                <span>playlists</span>
+              </div>
+              <div onclick="application.goToTargetView(event)" id="mixxer">
+                <span>mixxer</span>
+              </div>
+
+              <!-- Bottom Corner Rectangle -->
+              <svg class="Rectangle_5">
+                <rect fill="rgba(255,255,255,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_5" rx="0" ry="0" x="0" y="0" width="308" height="274">
+                </rect>
+              </svg>
+
+              <!-- Current Track Rectangle -->
+              <svg class="Rectangle_6">
+                <rect fill="rgba(255,255,255,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_6" rx="0" ry="0" x="0" y="0" width="716" height="716">
+                </rect>
+              </svg>
+
+              <!-- Analytics Rectangle -->
+              <svg class="Rectangle_7">
+                  <rect fill="rgba(255,255,255,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_7" rx="0" ry="0" x="0" y="0" width="338" height="605">
+                  </rect>
+                </svg>
+
+                <!-- Next Track Rectangle -->
+                <svg class="Rectangle_8">
+                  <rect fill="rgba(255,255,255,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_8" rx="0" ry="0" x="0" y="0" width="300" height="300">
+                  </rect>
+                </svg>
+
+                <!-- ? Rectangle -->
+                <svg class="Rectangle_9">
+                  <rect fill="rgba(102,111,255,1)" id="Rectangle_9" rx="0" ry="0" x="0" y="0" width="7" height="40">
+                  </rect>
+                </svg>
+
+
+              <div id="Nights">
+                <span>Nights</span>
+              </div>
+              <div id="Track_Analytics">
+                <span>Track Analytics</span>
+              </div>
+              <div id="Next">
+                <span>Next</span>
+              </div>
+              <div id="ID0_00">
+                <span>0:00</span>
+              </div>
+              <div id="ID3_35">
+                <span>3:35</span>
+              </div>
+              <div id="Frank_Ocean">
+                <span>Frank Ocean</span>
+              </div>
+              <div id="Blonde">
+                <span>Blonde</span>
+              </div>
+            </div>
+
+            
+            </body>
+
         <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
       </div>
     </div>
 
+
+    <!----------------------------------      Currently Playing HTML Template      ------------------------------->
+    <script id="currently-playing-template" type="text/x-handlebars-template">
+      <h1>Currently Playing - {{display_name}}</h1>
+      <div class="media">
+        <div class="pull-left">
+          <img class="media-object" width="150" src="{{images.0.url}}" />
+        </div>
+        <div class="media-body">
+          <dl class="dl-horizontal">
+            <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
+            <dt>Id</dt><dd>{{id}}</dd>
+            <dt>Email</dt><dd>{{email}}</dd>
+            <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd>
+            <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd>
+            <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
+            <dt>Country</dt><dd>{{country}}</dd>
+          </dl>
+        </div>
+      </div>
+    </script>
+
+
+
+    <!------------------------------------      User Profile HTML Template      ---------------------------------->
     <script id="user-profile-template" type="text/x-handlebars-template">
       <h1>Logged in as {{display_name}}</h1>
       <div class="media">
@@ -59,6 +185,8 @@
       </dl>
     </script>
 
+    
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script>
@@ -78,6 +206,11 @@
           return hashParams;
         }
 
+        var songData;
+        var id;
+
+        var currentlyPlaying
+
         var userProfileSource = document.getElementById('user-profile-template').innerHTML,
             userProfileTemplate = Handlebars.compile(userProfileSource),
             userProfilePlaceholder = document.getElementById('user-profile');
@@ -92,6 +225,41 @@
             refresh_token = params.refresh_token,
             error = params.error;
 
+
+            //gets current song data
+            $.ajax({
+                url: 'https://api.spotify.com/v1/me/player/currently-playing',
+                headers: {'Authorization': 'Bearer ' + access_token},
+                success: function(response) {
+                  songData = response;
+                  id = songData.item.id;
+                  document.getElementById('currently-playing').innerHTML = songData.item.name;
+                  document.getElementById('currently-playing').innerHTML = songData.item.name;
+
+
+                  //get track
+                  $.ajax({
+                    url: 'https://api.spotify.com/v1/tracks/' +id,
+                    headers: {'Authorization': 'Bearer ' + access_token},
+                    success: function(response) {
+                      document.getElementById('album-art').src = (response.album.images[0].url);
+                    }
+                  });
+
+                  
+                  //track analytics
+                  $.ajax({
+                    url: 'https://api.spotify.com/v1/audio-analysis/' +id,
+                    headers: {'Authorization': 'Bearer ' + access_token},
+                    success: function(response) {
+                      document.getElementById('song-bpm').innerHTML = response.track.tempo;
+                    }
+                  });
+                }
+            });
+
+            
+        //renders logged in user display
         if (error) {
           alert('There was an error during the authentication');
         } else {
