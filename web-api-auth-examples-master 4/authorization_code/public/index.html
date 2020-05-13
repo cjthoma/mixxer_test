@@ -7,128 +7,61 @@
   </head>
 
   <body>
+    <!-- NAV BAR -->
+    <div id="nav-bar">
+      <!-- Nav Bar Rectangle -->
+      <svg class="Rectangle_1">
+          <rect fill="rgba(231,236,239,1)" id="Rectangle_1" rx="10" ry="10" x="0" y="0" width="370" height="1080">
+          </rect>
+        </svg>
+
+        <div id="MIXXER">
+            <span>MIXXER</span>
+        </div>
+        
+        <div id="MENU">
+          <span>MENU</span>
+        </div>
+
+        <div id="player">
+          <span>player</span>
+        </div>
+
+        <div id="playlists">
+          <span>playlists</span>
+        </div>
+        
+        <div id="mixxer">
+          <span>mixxer</span>
+        </div>
+    </div>
+
+    
     <div class="container">
       <div id="login">
-        <h1>This is an example of the Authorization Code flow</h1>
+        <h1>Mixxer App Login</h1>
         <a href="/login" class="btn btn-primary">Log in with Spotify</a>
       </div>
 
+      <!-- Logged In -->
       <div id="loggedin">
-        <div id="user-profile">
-        </div>
+        <div id="user-profile"></div>
         <h1>Currently Playing: <span id="currently-playing"></span></h1>
         <h1>BPM: <span id="song-bpm"></span></h1>
-        <h1>Album Art: <img id="album-art" src="" alt=""></h1>
-        <div id="oauth">
+        <h1>Album Art:</h1>
+        
+        <!-- MAIN APP VIEW -->
+        <div class="">
+          
+          <!-- User Panel -->
+          <div id="user-panel"></div>
+          <div id="app-window"></div>
+          
+        <!--MAIN APP VIEW END-->
         </div>
-
-        <body>
-            <div id="Home">
-              <!-- Nav Bar Rectangle -->
-              <svg class="Rectangle_1">
-                <rect fill="rgba(231,236,239,1)" id="Rectangle_1" rx="10" ry="10" x="0" y="0" width="370" height="1080">
-                </rect>
-              </svg>
-
-              <!-- Main Rectangle -->
-              <svg class="Rectangle_2">
-                <rect fill="rgba(249,250,251,1)" id="Rectangle_2" rx="10" ry="10" x="0" y="0" width="1550" height="1080">
-                </rect>
-              </svg>
-
-              <!-- User Rectangle -->
-              <svg class="Rectangle_3">
-                <rect fill="rgba(78,78,78,1)" id="Rectangle_3" rx="0" ry="0" x="0" y="0" width="250" height="75">
-                </rect>
-              </svg>
-
-              <!-- User Icon Rectangle -->
-              <svg class="Rectangle_4">
-                <rect fill="rgba(255,255,255,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_4" rx="0" ry="0" x="0" y="0" width="60" height="58">
-                </rect>
-              </svg>
-
-              <!-- Menu -->
-              <div id="Welcome">
-                <span>Welcome</span>
-              </div>
-              <div id="MIXXER">
-                  <span>MIXXER</span>
-                </div>
-              <div id="user_name">
-                <span>user_name</span>
-              </div>
-              <div id="MENU">
-                <span>MENU</span>
-              </div>
-              <div id="player">
-                <span>player</span>
-              </div>
-              <div onclick="application.goToTargetView(event)" id="playlists">
-                <span>playlists</span>
-              </div>
-              <div onclick="application.goToTargetView(event)" id="mixxer">
-                <span>mixxer</span>
-              </div>
-
-              <!-- Bottom Corner Rectangle -->
-              <svg class="Rectangle_5">
-                <rect fill="rgba(255,255,255,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_5" rx="0" ry="0" x="0" y="0" width="308" height="274">
-                </rect>
-              </svg>
-
-              <!-- Current Track Rectangle -->
-              <svg class="Rectangle_6">
-                <rect fill="rgba(255,255,255,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_6" rx="0" ry="0" x="0" y="0" width="716" height="716">
-                </rect>
-              </svg>
-
-              <!-- Analytics Rectangle -->
-              <svg class="Rectangle_7">
-                  <rect fill="rgba(255,255,255,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_7" rx="0" ry="0" x="0" y="0" width="338" height="605">
-                  </rect>
-                </svg>
-
-                <!-- Next Track Rectangle -->
-                <svg class="Rectangle_8">
-                  <rect fill="rgba(255,255,255,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_8" rx="0" ry="0" x="0" y="0" width="300" height="300">
-                  </rect>
-                </svg>
-
-                <!-- ? Rectangle -->
-                <svg class="Rectangle_9">
-                  <rect fill="rgba(102,111,255,1)" id="Rectangle_9" rx="0" ry="0" x="0" y="0" width="7" height="40">
-                  </rect>
-                </svg>
-
-
-              <div id="Nights">
-                <span>Nights</span>
-              </div>
-              <div id="Track_Analytics">
-                <span>Track Analytics</span>
-              </div>
-              <div id="Next">
-                <span>Next</span>
-              </div>
-              <div id="ID0_00">
-                <span>0:00</span>
-              </div>
-              <div id="ID3_35">
-                <span>3:35</span>
-              </div>
-              <div id="Frank_Ocean">
-                <span>Frank Ocean</span>
-              </div>
-              <div id="Blonde">
-                <span>Blonde</span>
-              </div>
-            </div>
-
-            
-            </body>
-
+        <div id="oauth"></div>
         <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
+        <!-- Logged In End -->
       </div>
     </div>
 
@@ -154,6 +87,35 @@
       </div>
     </script>
 
+    <!----------------------------------      Player HTML Template      ------------------------------->
+    <script id="player-template" type="text/x-handlebars-template">
+    <!-- MAIN APP VIEW -->
+    <div class="container2">
+      <div style="width: 100vw; height: 100vh; overflow: hidden"><img id="bg-image" src="{{item.album.images.0.url}}"alt=""></div>
+
+      <!-- Next Track Rectangle -->
+      <svg class="Rectangle_8">
+        <rect fill="rgba(255,255,255,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_8" rx="0" ry="0" x="0" y="0" width="300" height="300">
+        </rect>
+      </svg>
+
+      <!-- User Panel -->
+
+      <!-- Current Track Info -->
+      <div><img id="album-art" src="{{item.album.images.0.url}}" alt=""></div>
+      <div id="track-name" class="track-info"><span>{{item.name}}</span></div>
+      <div id="track-artist" class="track-info"><span>{{item.album.artists.0.name}}</span></div>
+      <div id="track-album" class="track-info"><span>{{item.album.name}}</span></div>
+      <div id="track-analytics"><span>Track Analytics</span></div>
+      <div id="next"><span>Next</span></div>
+      <div class="progress">
+        <div class="progress_bar" style="width: calc({{progress_ms}}% * 100 / {{item.duration_ms}});"></div>
+      </div>
+        
+    <!--MAIN APP VIEW END-->
+    </div>
+    </script>
+
 
 
     <!------------------------------------      User Profile HTML Template      ---------------------------------->
@@ -177,6 +139,29 @@
       </div>
     </script>
 
+    <!------------------------------------      User Panel HTML Template      ---------------------------------->
+    <script id="user-panel-template" type="text/x-handlebars-template">
+      <div>
+          <!-- User Rectangle -->
+          <svg id="user-panel-bg">
+            <rect fill="rgba(78,78,78,1)" id="Rectangle_3" rx="0" ry="0" x="0" y="0" width="250" height="75">
+            </rect>
+          </svg>
+
+          <!-- User Icon -->
+          <img class="user-icon" width="50" height="50" src="{{images.0.url}}"/>
+          <div id="Welcome">
+            <span>Welcome</span>
+          </div>
+          <div id="user_name">
+            <span>{{display_name}}</span>
+          </div>
+
+        <!-- End User Panel-->
+        </div>
+    </script>
+
+    <!------------------------------------      OAuth HTML Template      ---------------------------------->
     <script id="oauth-template" type="text/x-handlebars-template">
       <h2>oAuth info</h2>
       <dl class="dl-horizontal">
@@ -201,20 +186,33 @@
           var e, r = /([^&;=]+)=?([^&;]*)/g,
               q = window.location.hash.substring(1);
           while ( e = r.exec(q)) {
-             hashParams[e[1]] = decodeURIComponent(e[2]);
+            hashParams[e[1]] = decodeURIComponent(e[2]);
           }
           return hashParams;
         }
 
-        var songData;
         var id;
 
         var currentlyPlaying
 
+
+        //user panel template config
+        var userPanelSource = document.getElementById('user-panel-template').innerHTML,
+            userPanelTemplate = Handlebars.compile(userPanelSource),
+            userPanelPlaceholder = document.getElementById('user-panel');
+
+        //app window template config
+        var windowSource = document.getElementById('player-template').innerHTML,
+            windowTemplate = Handlebars.compile(windowSource),
+            widnowPlaceholder = document.getElementById('app-window');
+
+
+        //user profile template config
         var userProfileSource = document.getElementById('user-profile-template').innerHTML,
             userProfileTemplate = Handlebars.compile(userProfileSource),
             userProfilePlaceholder = document.getElementById('user-profile');
 
+        //oauth token recertification config
         var oauthSource = document.getElementById('oauth-template').innerHTML,
             oauthTemplate = Handlebars.compile(oauthSource),
             oauthPlaceholder = document.getElementById('oauth');
@@ -231,18 +229,24 @@
                 url: 'https://api.spotify.com/v1/me/player/currently-playing',
                 headers: {'Authorization': 'Bearer ' + access_token},
                 success: function(response) {
-                  songData = response;
-                  id = songData.item.id;
-                  document.getElementById('currently-playing').innerHTML = songData.item.name;
-                  document.getElementById('currently-playing').innerHTML = songData.item.name;
-
+                  id = response.item.id;
+                  widnowPlaceholder.innerHTML = windowTemplate(response);
+                  console.log(response.progress_ms * 100 / response.item.duration_ms)
 
                   //get track
                   $.ajax({
                     url: 'https://api.spotify.com/v1/tracks/' +id,
                     headers: {'Authorization': 'Bearer ' + access_token},
                     success: function(response) {
-                      document.getElementById('album-art').src = (response.album.images[0].url);
+                      
+                      /* Originally work was done at track selection from ID
+
+                      document.getElementById('album-art').src = response.album.images[0].url;
+                      document.getElementById('track-album').firstElementChild.innerHTML = response.album.name;
+                      document.getElementById('track-name').firstElementChild.innerHTML = response.name;
+                      document.getElementById('track-artist').firstElementChild.innerHTML = response.album.artists[0].name;
+
+                      */
                     }
                   });
 
@@ -277,6 +281,7 @@
                 },
                 success: function(response) {
                   userProfilePlaceholder.innerHTML = userProfileTemplate(response);
+                  userPanelPlaceholder.innerHTML = userPanelTemplate(response);
 
                   $('#login').hide();
                   $('#loggedin').show();

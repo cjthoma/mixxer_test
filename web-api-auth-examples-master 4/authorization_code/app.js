@@ -116,8 +116,9 @@ app.get('/callback', function(req, res) {
 
         request.get(currSong, function(error, response, data) {
           console.log('------ Song ID ------');
-          console.log(data.item['name']);
-          console.log(data.item['id']);
+          console.log('Song: ' +data.item['name']);
+          console.log('Artist: ' +data.item.artists[0].name);
+          console.log('ID: ' +data.item['id']);
           id = data.item['id'];
           var track;
 

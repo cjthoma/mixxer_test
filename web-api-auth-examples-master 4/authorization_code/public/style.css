@@ -1,3 +1,111 @@
+/*********************** CSS STYLES ***********************/
+
+body {
+    overflow-x: hidden;
+    display: block;
+}
+
+.container {
+    padding: 0;
+    margin: 0;
+}
+
+.container2 {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+
+}
+
+#user-panel {
+    position: absolute;
+    display: inline;
+    z-index: 1;
+}
+
+.user-icon {
+    /* this doesnt work right now fix later */
+    background-size: cover;
+}
+
+#nav-bar {
+    display: none;
+}
+
+/*********************** PLAYER STYLES ***********************/
+
+#bg-image {
+    position: relative;
+    width: 110%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    top: -20%;
+    right: 100px;
+    background-size: cover;
+    filter: blur(30px);
+    opacity: .5;
+}
+
+#album-art {
+    position: absolute;
+    overflow: visible;
+    width: 716px;
+    height: 716px;
+    left: 150px;
+    top: 109px;
+}
+
+.track-info {
+    position: absolute;
+    left: 900px;
+    font-family: Helvetica;
+    font-style: normal;
+    text-align: left;
+    color: rgba(165,168,176,1);
+    white-space: nowrap;
+}
+
+#track-name {
+    top: 275px;
+    width: 219px;
+    font-weight: bold;
+    font-size: 70px;
+}
+
+#track-artist {
+    top: 350px;
+    width: 174px;
+    font-weight: normal;
+    font-size: 30px;
+}
+#track-album {
+    top: 390px;
+    width: 64px;
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+/*********************** PROGRESS BAR ***********************/
+
+.progress {
+    position: absolute;
+    width: 500px;
+    top: 500px;
+    left: 900px;
+    border: 0.15em solid #eee;
+    background-color: transparent;
+    height: 1em;
+}
+
+.progress_bar {
+    background-color: #eee;
+    border: 0.1em solid transparent;
+    height: 0.75em;
+}
+
+/*********************** CARRY-OVER STYLES ***********************/
+
 #login, #loggedin {
     display: none;
 }
@@ -10,22 +118,12 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
     border: none;
 }
-#Home {
-    position: absolute;
-    width: 1920px;
-    height: 1080px;
-    background-color: rgba(243,247,248,1);
-    overflow: hidden;
-    --web-view-name: Home;
-    --web-view-id: Home;
-    --web-scale-on-resize: true;
-    --web-enable-deep-linking: true;
-}
+
 @keyframes fadein {
 
     0% {
@@ -58,15 +156,8 @@
     font-size: 30px;
     color: rgba(81,85,92,1);
 }
-.Rectangle_2 {
-    position: absolute;
-    overflow: visible;
-    width: 1550px;
-    height: 1080px;
-    left: 370px;
-    top: 0px;
-}
-.Rectangle_3 {
+
+#user-panel-bg {
     position: absolute;
     overflow: visible;
     width: 250px;
@@ -74,7 +165,7 @@
     left: 1628px;
     top: 36px;
 }
-.Rectangle_4 {
+.user-icon {
     position: absolute;
     overflow: visible;
     width: 60px;
@@ -182,29 +273,10 @@
     left: 34px;
     top: 775px;
 }
-.Rectangle_6 {
-    position: absolute;
-    overflow: visible;
-    width: 716px;
-    height: 716px;
-    left: 787px;
-    top: 109px;
-}
-#Nights {
-    position: absolute;
-    left: 1036px;
-    top: 885px;
-    overflow: visible;
-    width: 219px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Helvetica;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 70px;
-    color: rgba(165,168,176,1);
-}
-#Track_Analytics {
+
+
+
+#track-analytics {
     position: absolute;
     left: 467px;
     top: 109px;
@@ -218,7 +290,7 @@
     font-size: 30px;
     color: rgba(165,168,176,1);
 }
-#Next {
+#next {
     position: absolute;
     left: 1671px;
     top: 467px;
@@ -232,62 +304,8 @@
     font-size: 30px;
     color: rgba(165,168,176,1);
 }
-#ID0_00 {
-    position: absolute;
-    left: 650px;
-    top: 849px;
-    overflow: visible;
-    width: 61px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Helvetica;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    color: rgba(165,168,176,1);
-}
-#ID3_35 {
-    position: absolute;
-    left: 1578px;
-    top: 849px;
-    overflow: visible;
-    width: 61px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Helvetica;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    color: rgba(165,168,176,1);
-}
-#Frank_Ocean {
-    position: absolute;
-    left: 1059px;
-    top: 963px;
-    overflow: visible;
-    width: 174px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Helvetica;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 30px;
-    color: rgba(165,168,176,1);
-}
-#Blonde {
-    position: absolute;
-    left: 1114px;
-    top: 1001px;
-    overflow: visible;
-    width: 64px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Helvetica;
-    font-style: normal;
-    font-weight: lighter;
-    font-size: 20px;
-    color: rgba(165,168,176,1);
-}
+
+
 .Rectangle_7 {
     position: absolute;
     overflow: visible;
