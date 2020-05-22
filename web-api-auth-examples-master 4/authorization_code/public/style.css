@@ -29,6 +29,10 @@ body {
     background-size: cover;
 }
 
+#login-info {
+    display: none;
+}
+
 #nav-bar {
     display: none;
 }
@@ -37,13 +41,10 @@ body {
 
 #bg-image {
     position: relative;
-    width: 110%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    top: -20%;
+    width: 105%;
+    bottom: 5%;
     right: 100px;
-    background-size: cover;
-    filter: blur(30px);
+    filter: blur(0px);
     opacity: .5;
 }
 

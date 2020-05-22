@@ -105,7 +105,7 @@ app.get('/callback', function(req, res) {
           url: 'https://api.spotify.com/v1/me/player/currently-playing',
           headers: { 'Authorization': 'Bearer ' + access_token },
           json: true
-        }
+        };
 
         
 
