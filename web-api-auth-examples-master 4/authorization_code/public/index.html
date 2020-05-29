@@ -4,7 +4,6 @@
     <title>Mixxer App</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <script src="https://sdk.scdn.co/spotify-player.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
@@ -40,10 +39,14 @@
 
     
     <div class="container">
-      <div id="login" class="bg">
-        <h1>Mixxer App Login</h1>
-        <a href="/login" class="btn btn-primary">Log in with Spotify</a>
+      <div id="login">
+          <h1>Mixxer Login</h1>
+          <h6>The mixxer web app requires a spotify account</h6>
+          <a href="/login" class="btn btn-outline-primary">Log in with Spotify</a>
+          <h6>Not a member? <a href="/" class="">Sign Up</a></h6>
       </div>
+      <img class="bg" src="">
+    </div>
 
       <!-- Logged In -->
       <div id="loggedin">
@@ -69,15 +72,6 @@
       </div>
     </div>
 
-
-    <!----------------------------------      Login Page Template      ------------------------------->
-    <script>
-      <div class='bg'>
-        <div id='login-box'>
-          h1
-        </div>
-      </div>
-    </script>
     <!----------------------------------      Currently Playing HTML Template      ------------------------------->
     <script id="currently-playing-template" type="text/x-handlebars-template">
       <h1>Currently Playing - {{display_name}}</h1>
@@ -104,7 +98,7 @@
     <!-- MAIN APP VIEW -->
     <div class="container2">
       <div style="width: 100vw; height: 100vh; overflow: hidden">
-        <img id="bg-image" src="{{item.album.images.0.url}}"alt="">
+        <img class="bg" src=""alt="">
       </div>
 
       <!-- Next Track Rectangle -->
@@ -118,10 +112,10 @@
       <!-- Player Controls -->
       <div id="player-controls">
         <div class="progress">
-          <div class="progress_bar" style="width: calc({{progress_ms}}% * 100 / {{item.duration_ms}});"></div>
+          <div class="progress_bar" id="testSel" style="width: calc({{position}}% * 100 / {{duration}});"></div>
         </div>
-        <span>{{progress_ms}}</span>
-        <span>{{item.duration_ms}}</span>
+        <span>{{position}}</span>
+        <span>{{duration}}</span>
         <i class="fas fa-play"></i>
         <i class="fas fa-pause"></i>
         <i class="fas fa-random"></i>
@@ -130,10 +124,10 @@
       </div>
 
       <!-- Current Track Info -->
-      <div><img id="album-art" src="{{item.album.images.0.url}}" alt=""></div>
-      <div id="track-name" class="track-info"><span>{{item.name}}</span></div>
-      <div id="track-artist" class="track-info"><span>{{item.album.artists.0.name}}</span></div>
-      <div id="track-album" class="track-info"><span>{{item.album.name}}</span></div>
+      <div><img id="album-art" src="{{track_window.current_track.album.images.0.url}}" alt=""></div>
+      <div id="track-name" class="track-info"><span>{{track_window.current_track.name}}</span></div>
+      <div id="track-artist" class="track-info"><span>{{track_window.current_track.artists.0.name}}</span></div>
+      <div id="track-album" class="track-info"><span>{{track_window.current_track.album.name}}</span></div>
       <div id="track-analytics"><span>Track Analytics</span></div>
       <div id="next"><span>Next</span></div>
 
@@ -168,39 +162,12 @@
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
     <script src="scripts.js"></script>
     <script>
       window.onSpotifyWebPlaybackSDKReady = () => {
-      // You can now initialize Spotify.Player and use the SDK
-    };
-    /**
-    const play = ({
-      spotify_uri,
-      playerInstance: {
-        _options: {
-          getOAuthToken,
-          id
-        }
+        // You can now initialize Spotify.Player and use the SDK
       }
-    }) => {
-      getOAuthToken(access_token => {
-        fetch(`https://api.spotify.com/v1/me/player/play?device_id=${id}`, {
-          method: 'PUT',
-          body: JSON.stringify({ uris: [spotify_uri] }),
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${access_token}`
-          },
-        });
-      });
-      };
-
-    play({
-      playerInstance: new Spotify.Player({ name: "..." }),
-      spotify_uri: 'spotify:track:7xGfFoTpQ2E7fRF5lN10tr',
-    });
-
-      **/
     </script>
   </body>
 </html>

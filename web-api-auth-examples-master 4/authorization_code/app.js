@@ -47,7 +47,7 @@ app.get('/login', function(req, res) {
     res.cookie(stateKey, state);
 
     // your application requests authorization
-    var scope = 'user-read-private user-read-email user-read-currently-playing';
+    var scope = 'streaming user-read-playback-state user-read-private user-read-email user-read-currently-playing';
     res.redirect('https://accounts.spotify.com/authorize?' +
       querystring.stringify({
         response_type: 'code',
@@ -90,9 +90,11 @@ app.get('/callback', function(req, res) {
     request.post(authOptions, function(error, response, body) {
       if (!error && response.statusCode === 200) {
 
+        
         var access_token = body.access_token,
             refresh_token = body.refresh_token;
 
+        /**
         //get current user profile
         var options = {
           url: 'https://api.spotify.com/v1/me',
@@ -157,7 +159,7 @@ app.get('/callback', function(req, res) {
         
 
         
-
+        */
         // we can also pass the token to the browser to make requests from there
         res.redirect('/#' +
           querystring.stringify({
