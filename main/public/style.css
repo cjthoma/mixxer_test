@@ -1,0 +1,384 @@
+/*********************** CSS STYLES ***********************/
+
+body {
+    overflow-x: hidden;
+    display: block;
+}
+
+h3 * {
+    width: 20em;
+}
+
+#login {
+    position: relative;
+    display: block;
+    box-shadow: 10px 20px 20px rgba(34,34,34,0.6);
+    top: 20%;
+    width: 350px;
+    height: 450px;
+    text-align: center;
+    padding: 25px;
+    z-index: 1;
+    border: 1px solid black;
+}
+
+/***********************  SCENE STYLES  ***********************/
+
+#scene-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    mix-blend-mode: color-dodge;
+}
+
+#grid {
+    position: absolute;
+    left: 50%;
+}
+
+#grid-cover {
+    fill: white;
+}
+
+/*********************** PLAYER STYLES ***********************/
+
+.container {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+}
+
+.grd-bg {
+    position: absolute;
+    z-index: -1;
+    background-image: linear-gradient(45deg, #b67f9c, #7fdcd4, #116e43);
+    background-size: 500% 500%;
+    animation: gradient 60s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 100%;
+	}
+	25% {
+		background-position: 50% 77%;
+	}
+	50% {
+		background-position: 100% 100%;
+    }
+    
+    75% {
+		background-position: 50% 77%;
+    }
+
+    100% {
+		background-position: 0% 100%;
+    }
+}
+
+#album-art {
+    position: relative;
+    overflow: hidden;
+    margin-top: 60px;
+    width: 520x;
+    height: 520px;
+    top: -10;
+    right: 0;
+    clip-path: polygon(50% 0%, 50% 100%, 100% 100%, 100% 0%)
+}
+
+#confetti-container {
+    position: relative;
+    top: -520px;
+    clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
+}
+
+.confetti {
+    fill: none;
+    stroke:#000000;
+    stroke-width: 40;
+    top: 0;
+    stroke-miterlimit: 10;
+}
+
+.track-info {
+    position: relative;
+    display: block;
+    font-style: normal;
+    color: rgba(165,168,176,1);
+    text-align: center;
+    top: -1040px;
+    left: 560px;
+    width: 380px;
+    z-index: -1;
+}
+
+#track-name {
+    height: 45px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: white;
+    color: black;
+    mix-blend-mode: color-dodge;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+#track-name::first-line {
+    letter-spacing: 5px;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+
+#track-artist-album {
+    height: 35px;
+    font-weight: normal;
+    font-size: 15px;
+    background-color: white;
+    color: black;
+    mix-blend-mode: color-dodge;
+    white-space: nowrap;
+    padding: 3px;
+}
+
+#divider {
+    font-size: 18px;
+}
+
+#track-tempo , #track-energy {
+    text-align: left;
+    font-size: 80px;
+    font-weight: 500;
+    color: #262a36;
+}
+
+#track-tempo {
+    position: relative;
+    bottom: 1049px;
+    left: 560px;
+}
+
+#track-tempo * {
+    position: relative;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 1px 5px;
+    right: -16px;
+    bottom: 3px;
+    mix-blend-mode: color-dodge;
+    background-color: white;
+}
+
+#track-energy {
+    position: relative;
+    bottom: 1083px;
+    left: 555px;
+}
+
+#track-energy * {
+    position: relative;
+    bottom: 3px;
+    right: -18px;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 1px 5px;
+    mix-blend-mode: color-dodge;
+    background-color: white;
+}
+
+
+/*********************** Player Controls ***********************/
+
+#player-controls {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+    width: 520px;
+    height: 80px;
+    background-color: #262a36;
+    top: 600px;
+}
+
+.progress {
+    position: absolute;
+    top: 12px;
+    width: 400px;
+    border: 0.1em solid #eee;
+    background-color: transparent;
+    height: .4em;
+}
+
+#position, #duration {
+    position: absolute;
+    top: 5px;
+    color: white;
+    font-size: 11px;
+
+}
+
+#position {
+    left: 20px;
+}
+
+#duration {
+    right: 20px;
+}
+
+.progress_bar {
+    top: 10px;
+    border: 0.1em solid transparent;
+    height: 0.25em;
+}
+
+#bar-fill {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.icon {
+    height: 45px;
+    width: 45px;
+}
+
+#play-button, #pause-button {
+    position: absolute;
+    display: block;
+    top: 25px;
+}
+
+#previous-track, #next-track {
+    position: absolute;
+    display: block;
+    fill: white;
+    top: 40px;
+    height: 15px;
+    width: 15px;
+}
+
+#previous-track {
+    left: 35%;
+}
+
+#next-track {
+    right: 35%;
+}
+
+.play-fill,.pause-fill {
+    fill:   red;
+    stroke: white;
+    stroke-width:2px;
+}
+
+.play-fill{
+    stroke-miterlimit:10;
+}
+
+.pause-fill{
+    stroke-linecap:
+    round;
+    stroke-linejoin:
+    round;
+}
+
+/*********************** LOADER STYLES ***********************/
+
+#load-anim {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+ul {
+    position: absolute;
+    top: 50%;
+    left: 44%;
+    transform: translate(-50% -50%);
+    display: flex;
+}
+
+ul li {
+    list-style: none;
+    width: 6px;
+    height: 20px;
+    background: #116e43;
+    mix-blend-mode: color-dodge;
+    margin: 0 4px;
+    animation: pulsar .7s infinite alternate;
+}
+
+@keyframes pulsar {
+    0% {
+        transform: scaleY(1);
+    }
+    25% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+    75% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(3);
+    }
+}
+
+ul li:nth-child(1) {
+    animation-delay: .1s;
+}
+
+ul li:nth-child(1) {
+    animation-delay: .1s;
+}
+
+ul li:nth-child(2) {
+    animation-delay: .2s;
+}
+
+ul li:nth-child(3) {
+    animation-delay: .3s;
+}
+
+ul li:nth-child(4) {
+    animation-delay: .4s;
+}
+
+ul li:nth-child(5) {
+    animation-delay: .5s;
+}
+
+ul li:nth-child(6) {
+    animation-delay: .6s;
+}
+
+
+/*********************** CARRY-OVER STYLES ***********************/
+
+
+#login, #loggedin {
+    display: none;
+}
+
+#loggedin {
+    z-index: 10;
+}
+
+
+
+
+

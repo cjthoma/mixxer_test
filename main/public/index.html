@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mixxer App</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <div class="container grd-bg">
+      <div id="login">
+        <div class="logo">
+          <svg id="Capa_1" enable-background="new 0 0 512 512" width="25" height="25" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path id="XMLID_1118_" d="m234 243.783c-.951 0-1.868.141-2.739.389l-.002-.007-28.722 8.187c-5.311 1.514-8.39 7.047-6.876 12.358 1.253 4.396 5.258 7.261 9.612 7.261.907 0 1.83-.125 2.746-.385l15.981-4.554v35.42l-124 35.345v-35.42l21.464-6.118c5.311-1.514 8.39-7.047 6.876-12.358s-7.045-8.387-12.358-6.876l-28.723 8.187.001.007c-4.189 1.193-7.26 5.039-7.26 9.61v127.199c-8.363-6.293-18.752-10.028-30-10.028-27.57 0-50 22.43-50 50s22.43 50 50 50 50-22.43 50-50v-103.406l124-35.345v57.733c-8.363-6.292-18.752-10.027-30-10.027-27.57 0-50 22.43-50 50s22.43 50 50 50 50-22.43 50-50v-167.172c0-5.523-4.477-10-10-10zm-184 248.217c-16.542 0-30-13.458-30-30s13.458-30 30-30 30 13.458 30 30-13.458 30-30 30zm144-41.045c-16.542 0-30-13.458-30-30s13.458-30 30-30 30 13.458 30 30-13.458 30-30 30z"/>
+            <path id="XMLID_2013_" d="m508.013 2.01c-2.511-1.889-5.763-2.487-8.782-1.619l-104.408 30.089c-4.282 1.234-7.231 5.152-7.231 9.609v127.199c-8.363-6.292-18.752-10.027-30-10.027-27.57 0-50 22.43-50 50s22.43 50 50 50 50-22.43 50-50v-103.43l97.177-28.005c4.282-1.234 7.231-5.152 7.231-9.609v-56.217c0-3.142-1.477-6.101-3.987-7.99zm-150.421 235.251c-16.542 0-30-13.458-30-30s13.458-30 30-30 30 13.458 30 30-13.458 30-30 30zm134.408-178.569-84.408 24.325v-35.403l84.408-24.325z"/>
+            <path id="XMLID_2027_" d="m471.591 348.762-48.288-7.017-21.595-43.756c-1.685-3.413-5.161-5.574-8.967-5.574s-7.283 2.161-8.967 5.574l-21.595 43.756-48.288 7.017c-3.767.547-6.896 3.186-8.073 6.806s-.195 7.594 2.531 10.251l34.941 34.06-8.249 48.093c-.644 3.751.898 7.543 3.978 9.781 3.079 2.236 7.162 2.532 10.531.761l43.19-22.707 43.19 22.706c1.463.77 3.061 1.149 4.652 1.149 2.073 0 4.137-.644 5.879-1.91 3.08-2.237 4.622-6.029 3.978-9.781l-8.249-48.093 34.941-34.06c2.726-2.657 3.707-6.631 2.531-10.251s-4.304-6.258-8.071-6.805zm-47.124 40.464c-2.357 2.297-3.433 5.607-2.876 8.851l5.712 33.304-29.909-15.724c-2.913-1.532-6.393-1.532-9.307 0l-29.909 15.724 5.712-33.304c.557-3.244-.519-6.554-2.876-8.851l-24.196-23.586 33.439-4.859c3.257-.473 6.073-2.519 7.529-5.47l14.955-30.301 14.954 30.301c1.457 2.951 4.272 4.997 7.529 5.47l33.439 4.859z"/>
+            <path id="XMLID_2031_" d="m32.62 90.706-6.62 38.593c-.644 3.751.898 7.543 3.978 9.781 3.079 2.237 7.163 2.533 10.531.761l34.658-18.221 34.659 18.221c1.463.769 3.061 1.148 4.652 1.148 2.073 0 4.137-.644 5.879-1.91 3.08-2.238 4.622-6.029 3.978-9.781l-6.62-38.593 28.04-27.331c2.726-2.657 3.707-6.631 2.531-10.251s-4.306-6.258-8.073-6.806l-38.75-5.631-17.328-35.112c-1.684-3.413-5.16-5.574-8.967-5.574s-7.283 2.161-8.967 5.574l-17.329 35.113-38.75 5.631c-3.767.547-6.896 3.186-8.073 6.806s-.195 7.594 2.531 10.251zm24.33-30.983c3.257-.473 6.073-2.519 7.529-5.47l10.688-21.657 10.688 21.657c1.457 2.951 4.272 4.997 7.529 5.47l23.9 3.473-17.292 16.858c-2.357 2.298-3.433 5.608-2.876 8.852l4.083 23.804-21.377-11.238c-1.457-.766-3.055-1.149-4.653-1.149-1.599 0-3.197.383-4.653 1.149l-21.377 11.238 4.083-23.804c.557-3.244-.519-6.554-2.876-8.852l-17.296-16.858z"/>
+            <path id="XMLID_2032_" d="m234 86.306c-5.523 0-10 4.477-10 10v10c0 5.523 4.477 10 10 10s10-4.477 10-10v-10c0-5.523-4.477-10-10-10z"/>
+            <path id="XMLID_2033_" d="m234 156.306c-5.523 0-10 4.477-10 10v10c0 5.523 4.477 10 10 10s10-4.477 10-10v-10c0-5.523-4.477-10-10-10z"/>
+            <path id="XMLID_2036_" d="m274 126.306h-10c-5.523 0-10 4.477-10 10s4.477 10 10 10h10c5.523 0 10-4.477 10-10s-4.477-10-10-10z"/>
+            <path id="XMLID_2038_" d="m194 146.306h10c5.523 0 10-4.477 10-10s-4.477-10-10-10h-10c-5.523 0-10 4.477-10 10s4.477 10 10 10z"/>
+            <path id="XMLID_2039_" d="m162 284.31c2.63 0 5.21-1.07 7.07-2.93s2.93-4.44 2.93-7.07c0-2.64-1.07-5.21-2.93-7.08-1.86-1.86-4.44-2.92-7.07-2.92s-5.21 1.06-7.07 2.92c-1.86 1.87-2.93 4.44-2.93 7.08 0 2.63 1.07 5.21 2.93 7.07s4.44 2.93 7.07 2.93z"/>
+          </svg>
+        </div>
+          <h1>Mixxer Login</h1>
+          <h6>The mixxer web app requires a spotify account</h6>
+          <a href="/login" class="btn btn-outline-primary">Log in with Spotify</a>
+          <h6>Not a member? <a href="/" class="">Sign Up</a></h6>
+      </div>
+      <img class="bg" src="">
+    </div>
+
+      <div id="loggedin" style="visibility: hidden;">
+        <!-- MAIN APP VIEW -->
+        <div class="container grd-bg">
+          
+          <div id="app-window"></div>
+          
+          <div id="player-controls">
+            <div class="progress">
+              <div class="progress_bar">
+                <div id="bar-fill"></div>
+              </div>
+            </div>
+            <span id="position"></span>
+            <span id="duration"></span>
+  
+            <svg class="icon" id="pause-button" viewBox="0 0 120 120">
+              <circle class="pause-fill" cx="60" cy="60" r="56.64"/>
+              <rect class="pause-fill pause-icon" height="44.92" rx="4.2" width="8.68" x="44.66" y="37.54"/>
+              <rect class="pause-fill pause-icon" height="44.92" rx="4.2" width="8.68" x="66.66" y="37.54"/>
+            </svg>
+  
+            <svg class="icon" id="play-button" viewBox="0 0 120 120">
+              <circle class="play-fill" cx="60" cy="60" r="56.64"/>
+              <path class="play-fill play-icon" d="M81.35,55.76,51.46,38.5a4.9,4.9,0,0,0-7.35,4.25v34.5a4.9,4.9,0,0,0,7.35,4.25L81.35,64.24A4.9,4.9,0,0,0,81.35,55.76Z"/>
+              <path class="play-fill play-icon" d=""/>
+            </svg>
+  
+            <svg class="icon" id="previous-track" viewBox="0 0 128 128">
+              <path d="M126,118.81a2,2,0,0,1-1-.26L33,65.73a2,2,0,0,1,0-3.46L125,9.45a2,2,0,0,1,3,1.74V116.81a2,2,0,0,1-1,1.74A2,2,0,0,1,126,118.81ZM38,64l86,49.36V14.64Z"/>
+              <path d="M22,118.46a2,2,0,0,1-2-2V11.54a2,2,0,0,1,4,0V116.46A2,2,0,0,1,22,118.46Z"/>
+            </svg>
+  
+            <svg class="icon" id="next-track" viewBox="0 0 128 128">
+              <path d="M2,118.81a2,2,0,0,1-1-.26,2,2,0,0,1-1-1.74V11.19A2,2,0,0,1,1,9.45a2,2,0,0,1,2,0L95,62.27a2,2,0,0,1,0,3.46L3,118.55A2,2,0,0,1,2,118.81ZM4,14.64v98.72L90,64Z"/>
+              <path d="M106,118.46a2,2,0,0,1-2-2V11.54a2,2,0,1,1,4,0V116.46A2,2,0,0,1,106,118.46Z"/>
+            </svg>
+          </div>
+
+          <div id="scene-container">
+              <svg id ="grid" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" stroke-width="0.5"/>
+                  </pattern>
+                  <pattern id="grid-temp" width="100" height="100" patternUnits="userSpaceOnUse">
+                    <rect width="100" height="100" fill="url(#smallGrid)"/>
+                  </pattern>
+                </defs>
+
+                <rect width="100%" height="100%" fill="url(#grid-temp)" />
+              </svg>
+              <svg  width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                  <rect id="grid-cover" width="50%" height="100%" fill= "white";/>
+              </svg>
+
+          </div>
+        </div> <!--MAIN APP VIEW CONTAINER END-->
+      </div> <!-- Logged In End -->
+      <div id="load-anim" class="grd-bg" style="visibility: hidden;">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+
+    <!----------------------------------      Player HTML Template      ------------------------------->
+    <script id="player-template" type="text/x-handlebars-template">
+      <!-- Current Track Info -->
+      <div>
+        <img id="album-art" src="{{item.album.images.0.url}}" alt="">
+        <div id="confetti-container" style="width: 520px; height: 520px;">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
+            <line class="confetti" x1="959.03" y1="986.3" x2="826.73" y2="1014.64"/>
+            <line class="confetti" x1="827.26" y1="905.98" x2="720.17" y2="986.82"/>
+            <line class="confetti" x1="787.36" y1="818.83" x2="916.5" y2="894.43"/>
+            <line class="confetti" x1="1017.3" y1="777.88" x2="976.35" y2="910.18"/>
+            <line class="confetti" x1="876.61" y1="799.93" x2="983.7" y2="709.64"/>
+            <line class="confetti" x1="980.55" y1="628.79" x2="840.91" y2="669.74"/>
+            <line class="confetti" x1="874.51" y1="454.5" x2="874.51" y2="600.44"/>
+            <line class="confetti" x1="964.8" y1="369.46" x2="812.56" y2="394.66"/>
+            <line class="confetti" x1="1017.3" y1="163.67" x2="976.35" y2="298.06"/>
+            <line class="confetti" x1="996.3" y1="94.37" x2="874.51" y2="198.32"/>
+            <line class="confetti" x1="978.45" y1="11.43" x2="852.46" y2="50.28"/>
+            <line class="confetti" x1="773.71" y1="-10.62" x2="749.56" y2="52.38"/>
+            <line class="confetti" x1="685.52" y1="78.62" x2="558.48" y2="82.82"/>
+            <line class="confetti" x1="597.32" y1="-10.62" x2="492.33" y2="47.13"/>
+            <line class="confetti" x1="453.48" y1="111.17" x2="372.64" y2="7.23"/>
+            <line class="confetti" x1="309.64" y1="-0.12" x2="309.64" y2="80.72"/>
+            <line class="confetti" x1="236.14" y1="17.73" x2="100.7" y2="58.68"/>
+            <line class="confetti" x1="56.6" y1="-32.67" x2="-12.69" y2="101.72"/>
+            <line class="confetti" x1="100.7" y1="120.62" x2="-43.14" y2="156.32"/>
+            <line class="confetti" x1="245.59" y1="94.37" x2="132.2" y2="192.02"/>
+            <line class="confetti" x1="49.26" y1="198.32" x2="168.95" y2="269.71"/>
+            <line class="confetti" x1="276.04" y1="165.77" x2="232.99" y2="293.86"/>
+            <line class="confetti" x1="340.09" y1="138.47" x2="394.68" y2="267.61"/>
+            <line class="confetti" x1="515.43" y1="138.47" x2="644.57" y2="202.52"/>
+            <line class="confetti" x1="838.81" y1="122.72" x2="694.97" y2="158.42"/>
+            <line class="confetti" x1="915.45" y1="274.96" x2="787.36" y2="202.52"/>
+            <line class="confetti" x1="829.36" y1="288.61" x2="718.07" y2="392.56"/>
+            <line class="confetti" x1="704.42" y1="234.02" x2="659.27" y2="382.06"/>
+            <line class="confetti" x1="597.32" y1="382.06" x2="544.83" y2="238.22"/>
+            <line class="confetti" x1="470.28" y1="229.82" x2="413.58" y2="382.06"/>
+            <line class="confetti" x1="515.43" y1="340.06" x2="425.13" y2="468.15"/>
+            <line class="confetti" x1="544.83" y1="418.8" x2="519.63" y2="581.54"/>
+            <line class="confetti" x1="659.27" y1="418.8" x2="787.36" y2="499.65"/>
+            <line class="confetti" x1="819.91" y1="556.35" x2="736.96" y2="694.94"/>
+            <line class="confetti" x1="840.91" y1="730.64" x2="691.82" y2="768.43"/>
+            <line class="confetti" x1="701.27" y1="698.09" x2="544.83" y2="694.94"/>
+            <line class="confetti" x1="622.52" y1="586.79" x2="481.83" y2="662.39"/>
+            <line class="confetti" x1="606.77" y1="458.7" x2="708.62" y2="600.44"/>
+            <line class="confetti" x1="292.84" y1="307.51" x2="379.99" y2="435.6"/>
+            <line class="confetti" x1="219.35" y1="371.56" x2="70.25" y2="392.56"/>
+            <line class="confetti" x1="94.4" y1="290.71" x2="-67.29" y2="418.8"/>
+            <line class="confetti" x1="49.26" y1="499.65" x2="-32.64" y2="454.5"/>
+            <line class="confetti" x1="77.6" y1="546.9" x2="-14.79" y2="716.99"/>
+            <line class="confetti" x1="109.1" y1="735.89" x2="-69.39" y2="781.03"/>
+            <line class="confetti" x1="168.95" y1="894.43" x2="47.16" y2="823.03"/>
+            <line class="confetti" x1="91.25" y1="905.98" x2="-12.69" y2="1000.47"/>
+            <line class="confetti" x1="221.44" y1="988.92" x2="70.25" y2="1019.37"/>
+            <line class="confetti" x1="281.29" y1="768.43" x2="230.89" y2="915.43"/>
+            <line class="confetti" x1="255.04" y1="709.64" x2="126.95" y2="813.58"/>
+            <line class="confetti" x1="240.34" y1="631.94" x2="108.05" y2="669.74"/>
+            <line class="confetti" x1="134.3" y1="454.5" x2="134.3" y2="600.44"/>
+            <line class="confetti" x1="256.09" y1="428.25" x2="207.8" y2="567.9"/>
+            <line class="confetti" x1="336.94" y1="497.55" x2="441.93" y2="600.44"/>
+            <line class="confetti" x1="309.64" y1="549" x2="309.64" y2="707.54"/>
+            <line class="confetti" x1="367.39" y1="615.14" x2="457.68" y2="737.99"/>
+            <line class="confetti" x1="510.18" y1="749.53" x2="642.47" y2="820.93"/>
+            <line class="confetti" x1="706.52" y1="844.03" x2="658.22" y2="1003.62"/>
+            <line class="confetti" x1="552.18" y1="858.73" x2="604.67" y2="1003.62"/>
+            <line class="confetti" x1="470.28" y1="832.48" x2="412.53" y2="983.67"/>
+            <line class="confetti" x1="336.94" y1="737.99" x2="389.43" y2="881.83"/>
+            <line class="confetti" x1="290.74" y1="923.82" x2="367.39" y2="1028.82"/>
+            <line class="confetti" x1="510.18" y1="953.22" x2="470.28" y2="1039.32"/>
+            <line class="confetti" x1="1055.4" y1="410.27" x2="937.47" y2="499.29"/>
+            <line class="confetti" x1="1109.31" y1="603.77" x2="969.56" y2="555.79"/>
+            </svg>
+        </div>
+        <div id="track-name" class="track-info"><span>{{item.name}}</span></div>
+        <div class="track-info" id="track-artist-album"><span>{{item.artists.0.name}} <span id="divider">||</span> {{item.album.name}}</span></div>
+      </div>
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vibrant.js/1.0.0/Vibrant.min.js"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
+

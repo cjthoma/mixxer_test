@@ -12,6 +12,8 @@ var request = require('request'); // "Request" library
 var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
+var http = require('http');
+var fs = require('fs');
 
 
 var client_id = 'e151f9112ac84284ac434524503e0db4'; // Your client id
@@ -82,7 +84,7 @@ app.get('/callback', function(req, res) {
         grant_type: 'authorization_code'
       },
       headers: {
-        'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
+        'Authorization': 'Basic ' + (Buffer.from(client_id + ':' + client_secret).toString('base64'))
       },
       json: true
     };
@@ -94,72 +96,7 @@ app.get('/callback', function(req, res) {
         var access_token = body.access_token,
             refresh_token = body.refresh_token;
 
-        /**
-        //get current user profile
-        var options = {
-          url: 'https://api.spotify.com/v1/me',
-          headers: { 'Authorization': 'Bearer ' + access_token },
-          json: true
-        };
 
-        //get users current song
-        var currSong = {
-          url: 'https://api.spotify.com/v1/me/player/currently-playing',
-          headers: { 'Authorization': 'Bearer ' + access_token },
-          json: true
-        };
-
-        
-
-        // use the access token to access the Spotify Web API
-        console.log('');
-        var id; //for storing spotify unique song id
-        var bpm; //for storing current songs bpm
-
-        request.get(currSong, function(error, response, data) {
-          console.log('------ Song ID ------');
-          console.log('Song: ' +data.item['name']);
-          console.log('Artist: ' +data.item.artists[0].name);
-          console.log('ID: ' +data.item['id']);
-          id = data.item['id'];
-          var track;
-
-          console.log('');
-
-          //track analysis credentials
-          var currAnalytics = {
-            url:  'https://api.spotify.com/v1/audio-analysis/' +id,
-            headers: { 'Authorization': 'Bearer ' + access_token },
-            json: true
-          }
-
-          //track request credentials
-          var currTrack = {
-            url:  'https://api.spotify.com/v1/tracks/' +id,
-            headers: { 'Authorization': 'Bearer ' + access_token },
-            json: true
-          }
-
-          //Requests Track
-          request.get(currTrack, function(error, response, data) {
-            console.log('------ Track ------');
-            console.log(data.album.images);
-            console.log('');
-          });
-
-
-          //Track Analytics
-          request.get(currAnalytics, function(error, response, data) {
-            console.log('------ Analytics ------');
-            console.log(data.track.tempo);
-            console.log('');
-          });
-        });
-
-        
-
-        
-        */
         // we can also pass the token to the browser to make requests from there
         res.redirect('/#' +
           querystring.stringify({
@@ -182,7 +119,7 @@ app.get('/refresh_token', function(req, res) {
   var refresh_token = req.query.refresh_token;
   var authOptions = {
     url: 'https://accounts.spotify.com/api/token',
-    headers: { 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
+    headers: { 'Authorization': 'Basic ' + (Buffer.from(client_id + ':' + client_secret).toString('base64')) },
     form: {
       grant_type: 'refresh_token',
       refresh_token: refresh_token
@@ -201,6 +138,6 @@ app.get('/refresh_token', function(req, res) {
 });
 
 console.log('Listening on 8888');
-app.listen(8888);
+http.createServer(app).listen(8888);
 
 
