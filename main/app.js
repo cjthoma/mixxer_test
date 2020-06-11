@@ -18,7 +18,7 @@ var fs = require('fs');
 
 var client_id = 'e151f9112ac84284ac434524503e0db4'; // Your client id
 var client_secret = 'a8fbf7ca10a84683b0d9863fdfacf896'; // Your secret
-var redirect_uri = 'http://localhost:8888/callback'; //redirect url
+var redirect_uri = 'http://54.221.72.15:8888/callback'; //redirect url
 
 /**
  * Generates a random string containing numbers and letters
